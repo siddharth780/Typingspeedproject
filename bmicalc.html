@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style type="text/css">
+		body{
+			background-image: url(bmi.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+
+		}
+		.card{
+			background-color: rgba(245, 245, 245, 0.4);
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="card">
+			<div class="card-header text-center"><h1>BMI Calculator</h1></div>
+			<div class="card-content text-center">
+				<form class="w-50 m-auto" onsubmit="return false">
+					<div class="form-group">
+						<label><b>Weight : </b></label>
+						<input type="number" name="" id="weight" placeholder="Weight in kgs" class="form-control">
+					</div>
+					<div class="form-group">
+						<label><b>Height : </b></label>
+						<input type="number" name="" id="height" placeholder="Height in Ft" class="form-control">
+					</div>
+					<div class="form-group">
+						<label><b>BMI Value: </b></label>
+						<input type="number" name="" id="bmivalue" class="form-control">
+					</div>
+					<div>
+						<button type="submit" class="btn btn-success" onclick="getbmival()">CHECK BMI</button>
+
+					</div>
+				</form>
+			</div>
+			<div class="card-footer text-center"><b>19-25 is Normal Weight</b></div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function getbmival(){
+			var weight = document.getElementById('weight').value;
+			var height = document.getElementById('height').value;
+
+			height = height*12;
+			height = height*0.025;
+
+			var bmii = weight/(height*height);
+
+			document.getElementById('bmivalue').value = bmii;
+
+		}
+
+	</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
